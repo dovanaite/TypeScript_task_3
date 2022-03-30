@@ -1,6 +1,11 @@
 
 class Point{
 
+    constructor(
+        private _x:number,
+        private _y:number
+    ){}
+
     get x(){
         return this._x;
     }
@@ -14,13 +19,8 @@ class Point{
         this._y=y;
     }
 
-constructor(
-    private _x:number,
-    private _y:number
-){}
-
 public distanceFromOrigin(){
-    return Math.sqrt(this._x * this._x + this._y  * this._y);
+    return Math.sqrt(this._x**2 + this._y**2);
 }
 
 public translate(dx:number, dy:number){
@@ -33,16 +33,14 @@ public toString():string{
 }
 
 public doubleDistance(p: Point) {
-    return Math.sqrt(((this._x - p.x) * (this._x - p.x)) + ((this._y - p.y) * (this._y - p.y)));
+    return Math.sqrt((this._x - p.x)**2 + (this._y - p.y)**2);
 }
 
 }
-
 
 
 let p1 = new Point(2,2);
 let p2 = new Point(5,2);
-
 
 
 console.log(p1.distanceFromOrigin());

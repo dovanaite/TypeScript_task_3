@@ -24,7 +24,7 @@ var Point = /** @class */ (function () {
         configurable: true
     });
     Point.prototype.distanceFromOrigin = function () {
-        return Math.sqrt(this._x * this._x + this._y * this._y);
+        return Math.sqrt(Math.pow(this._x, 2) + Math.pow(this._y, 2));
     };
     Point.prototype.translate = function (dx, dy) {
         this._x += dx;
@@ -34,7 +34,7 @@ var Point = /** @class */ (function () {
         return "[".concat(this._x, ",").concat(this._y, "]");
     };
     Point.prototype.doubleDistance = function (p) {
-        return Math.sqrt(((this._x - p.x) * (this._x - p.x)) + ((this._y - p.y) * (this._y - p.y)));
+        return Math.sqrt(Math.pow((this._x - p.x), 2) + Math.pow((this._y - p.y), 2));
     };
     return Point;
 }());
